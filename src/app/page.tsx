@@ -699,25 +699,13 @@ export default function Home() {
   const [hoveredObjects, setHoveredObjects] = useState<any[]>([])
   const [hoveredKey, setHoveredKey] = useState<HoverKey>(null)
   const [activePanel, setActivePanel] = useState<ActivePanel>(null)
-  const [isMobile, setIsMobile] = useState(false)
-  
+   const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
     function handleResize() {
       setIsMobile(window.innerWidth < 768)
     }
-const [isMobile, setIsMobile] = useState(false)
 
-useEffect(() => {
-  function handleResize() {
-    setIsMobile(window.innerWidth < 768)
-  }
-
-  handleResize()
-  window.addEventListener('resize', handleResize)
-
-  return () => window.removeEventListener('resize', handleResize)
-}, [])
     handleResize()
     window.addEventListener('resize', handleResize)
 
