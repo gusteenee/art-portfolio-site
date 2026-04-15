@@ -755,7 +755,7 @@ export default function Home() {
   key={isMobile ? 'camera-mobile-1' : 'camera-desktop-1'}
   camera={
     isMobile
-      ? { position: [0, 0.2, 10], fov: 24 }
+      ? { position: [0, 0.2, 12], fov: 28 }
       : { position: [0, 0.2, 8], fov: 15 }
   }
 >
