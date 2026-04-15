@@ -1,12 +1,11 @@
 'use client'
-
+import { useState, useEffect, useRef } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { useGLTF } from '@react-three/drei'
+import { useGLTF, useAnimations } from '@react-three/drei'
 import { EffectComposer, Outline } from '@react-three/postprocessing'
 import { BlendFunction } from 'postprocessing'
-import { useEffect, useRef, useState } from 'react'
 import { createClient } from 'next-sanity'
-import { useAnimations } from '@react-three/drei'
+
 
 type HoverKey = 'illustrations' | 'about' | 'animations' | null
 type ActivePanel = 'animations' | 'illustrations' | 'about' | null
@@ -700,7 +699,30 @@ export default function Home() {
   const [hoveredObjects, setHoveredObjects] = useState<any[]>([])
   const [hoveredKey, setHoveredKey] = useState<HoverKey>(null)
   const [activePanel, setActivePanel] = useState<ActivePanel>(null)
+  const [isMobile, setIsMobile] = useState(false)
+  
 
+  useEffect(() => {
+    function handleResize() {
+      setIsMobile(window.innerWidth < 768)
+    }
+const [isMobile, setIsMobile] = useState(false)
+
+useEffect(() => {
+  function handleResize() {
+    setIsMobile(window.innerWidth < 768)
+  }
+
+  handleResize()
+  window.addEventListener('resize', handleResize)
+
+  return () => window.removeEventListener('resize', handleResize)
+}, [])
+    handleResize()
+    window.addEventListener('resize', handleResize)
+
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
   return (
     <main className="h-screen w-screen bg-black relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full z-10 text-white pointer-events-auto">
@@ -742,9 +764,13 @@ export default function Home() {
       </div>
 
       <Canvas
-        key="camera-v-popup-animations-1"
-        camera={{ position: [0, 0.2, 8], fov: 15 }}
-      >
+  key={isMobile ? 'camera-mobile-1' : 'camera-desktop-1'}
+  camera={
+    isMobile
+      ? { position: [0, 0.2, 10], fov: 24 }
+      : { position: [0, 0.2, 8], fov: 15 }
+  }
+>
         <ambientLight intensity={1} />
         <pointLight position={[2, 3, 4]} intensity={20} />
 
