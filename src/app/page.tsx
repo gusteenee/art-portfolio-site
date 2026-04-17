@@ -634,12 +634,12 @@ function AboutWindow({
           <div className="flex-1 min-h-0 overflow-y-auto px-8 pt-2 pb-8 bg-black/10 backdrop-blur-md">
             <div className="mx-auto max-w-3xl">
               {/* Paper */}
-              <div className="bg-[#f8f2e8] border border-[#d8cdbc] shadow-[8px_8px_0px_rgba(0,0,0,0.16)] px-10 py-12 relative">
-                <h2 className="text-3xl text-[#2d241d] font-serif mb-8">
+              <div className="bg-[#f8f2e8] border border-[#d8cdbc] shadow-[8px_8px_0px_rgba(0,0,0,0.16)] px-10 py-12 relative font-['ShareTechMono']">
+                <h2 className="text-2xl text-[#2d241d] mb-8 tracking-[0.2em] uppercase">
                   About
                 </h2>
 
-                <div className="space-y-6 text-[#3f372f] leading-8 text-[17px]">
+                <div className="space-y-6 text-[#3f372f] leading-7 text-[15px] tracking-wide">
                   <p>
                     Gusteenee
                     
