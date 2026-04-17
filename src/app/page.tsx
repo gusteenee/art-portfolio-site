@@ -670,9 +670,11 @@ function AboutWindow({
     rel="noopener noreferrer"
     className="block w-36 h-36 bg-[#f3dc55] shadow-[3px_3px_0px_rgba(0,0,0,0.14)] rotate-[-2deg] border border-[#d1ba38] hover:scale-[1.02] transition-transform cursor-pointer"
   >
-    <div className="w-full h-full flex items-center justify-center text-[#6b5c12] text-xs text-center p-3">
-      Link One
-    </div>
+    <img
+  src="/sticky-note-1.png"
+  alt="Sticky note link one"
+  className="w-full h-full object-contain p-2"
+/>
   </a>
 
   <a
@@ -681,9 +683,11 @@ function AboutWindow({
     rel="noopener noreferrer"
     className="block w-36 h-36 bg-[#f3dc55] shadow-[3px_3px_0px_rgba(0,0,0,0.14)] rotate-[2deg] border border-[#d1ba38] hover:scale-[1.02] transition-transform cursor-pointer"
   >
-    <div className="w-full h-full flex items-center justify-center text-[#6b5c12] text-xs text-center p-3">
-      Link Two
-    </div>
+    <img
+  src="/sticky-note-2.png"
+  alt="Sticky note link two"
+  className="w-full h-full object-contain p-2"
+/>
   </a>
 </div>
               </div>
